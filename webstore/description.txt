@@ -1,0 +1,12 @@
+-- Automatically mute tabs based on their url using a black list or a white list
+-- Panic "mute all" button
+-- Pause extension button
+-- List entries can have multiple keywords; keywords can have exclusion operator
+-- Manually un/mute specific tab
+-- Changeable keyboard shortcuts for all controls
+-- Option to always keep in-focus tab unmuted
+-- Option to always keep all tabs except in-focus tab muted
+-- Functions to quickly add/remove current url to/from list
+-- Settings synced across Chrome devices
+-- Works offline; no hotlinked css/js/images/fonts/etc
+-- Uses pure ("vanilla") Javascript; no third-party libraries/trackers/etc

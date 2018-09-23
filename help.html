@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Help</title>
+		<link href='styles.css' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='help.js'></script>
+	</head>
+	<body>
+		<div class='header_wrapper'>
+		<a href='popup.html' class='link_no_underline'><img src='icon.svg' width='32px' height='32px' class='logo'/><span class='header link_highlight'>Mute Tabs By Url</span></a>
+		<div id='copyright'><i>&copy; 2018 <a href='https://www.vincentrubinetti.com/' class='link_highlight external_link'>Vincent Rubinetti</a></i></div>
+		</div>
+		<a href='#' class='link_highlight help_header help_header_top'>How the lists work <img src='downarrow.svg' width='16px' height='16px' class='help_header_arrow'/></a>
+		<div class='help_header_container'>
+		When the black list is active: if the url matches any of the entries on the list, the tab is muted; otherwise it is unmuted.<br>
+		<br>
+		When the white list is active: if the url matches any of the entries on the list, the tab is unmuted; otherwise it is muted.<br>
+		<br>
+		Each line in the list is a separate entry. Each entry can have multiple keywords, separated by spaces. The url must contain all of the keywords for the entry to be considered a match. A keyword can be preceded by a hyphen to indicate that the url must *not* contain the keyword. Matching is case-insensitive.<br>
+		<br>
+		For example, the following black list<br>
+		<br>
+		<textarea disabled rows=3 cols=25 style='overflow:hidden'>
+badsite.com
+amazon.com product
+.mov -dirtysite.com
+		</textarea><br>
+		<br>
+		will mute urls like<br>
+		<br>
+		<div class='help_code'>
+		http://ftp.badsite.com/dumb<br>
+		https://www.amazon.com/dp/PRODUCT/B002H09I0Y<br>
+		http://naughtysite.com/videos/naughty.mov<br>
+		</div>
+		<br>
+		but not<br>
+		<br>
+		<div class='help_code'>
+		http://www.baddersite.com/<br>
+		https://www.amazon.com/dp/B00137QS28<br>
+		http://dirtysite.com/videos/naughty.mov<br>
+		</div>
+		</div>
+		<a href='#' class='link_highlight help_header'>Other controls <img src='downarrow.svg' width='16px' height='16px' class='help_header_arrow'/></a>
+		<div class='help_header_container'>
+		<table>
+		<tr><td><i>Mute All Tabs</i></td><td>Panic button. Immediately mutes all sound from the browser.</td></tr>
+		<tr><td><i>Unmmute All Tabs</i></td><td>Pauses the extension. Immediately allows sound from all tabs.</td></tr>
+		<tr><td><i>Always unmute current tab</i></td><td>Keeps the in-focus tab always unmuted, regardless of url.</td></tr>
+		<tr><td><i>Always mute all other tabs</i></td><td>Keeps all tabs except the in-focus one always muted, regardless of url.</td></tr>
+		<tr><td><i>Add/Remove domain</i></td><td>Adds/removes the domain name (e.g. "bing.com") of the in-focus tab  to/from the shown list. </td></tr>
+		<tr><td><i>Add/Remove page</i></td><td>Adds/removes the full url (e.g. "https://www.bing.com/maps") of the in-focus tab to/from the shown list.</td></tr>
+		</table>
+		<br>
+		"Remove domain/page" will only remove list entries that contain the exact url and have no added keywords or modifications.<br>
+		<br>
+		You can also override the list for a specific tab by manually un/muting it, and the change will stick until the tab is closed and reopened. To manually un/mute a tab, either 1) right-click the page, 2) use the <a href='chrome://extensions/shortcuts' class='link_highlight external_link'>keyboard shortcut</a>, or 3) enable the handy <a href='chrome://flags/#enable-tab-audio-muting' class='link_highlight external_link'>tab muting control</a> flag in Chrome. If the tab un/mute has been manually changed, a * will appear next to the right-click menu item.<br>
+		<br>
+		For each tab, the un/mute is decided in the following order:<br>
+		<br>
+		<div class='help_code'>
+		<p>If "Mute All Tabs" is on, the tab is muted...</p>
+		<p>otherwise, if "Unmmute All Tabs" is on, the tab is unmuted...</p>
+		<p>otherwise, if user manually un/muted the tab, that choice stays...</p>
+		<p>otherwise, if applicable, the tab is un/muted based on "Always unmute current tab" or "Always mute all other tabs"...</p>
+		<p>otherwise, the tab is un/muted based on the active list.</p>
+		</div>
+		<br>
+		The extension icon will show a red X if the current tab is muted or a green circle if unmuted.
+		</div>
+		<a href='#' class='link_highlight help_header'>Keyboard shortcuts <img src='downarrow.svg' width='16px' height='16px' class='help_header_arrow'/></a>
+		<div class='help_header_container'>
+		Keyboard shortcuts for all controls can be set on Chrome's 
+		<a href='chrome://extensions/shortcuts' class='link_highlight external_link'>keyboard shortcuts for extensions</a> page.<br>
+		</div>
+		<a href='#' class='link_highlight help_header'>Miscellaneous <img src='downarrow.svg' width='16px' height='16px' class='help_header_arrow'/></a>
+		<div class='help_header_container'>
+		If your popup window becomes abnormally zoomed in or out, <a href='popup.html'>open this link in a new tab</a> and reset the zoom to the default 100% (ctrl+0).<br>
+		<br>
+		Chrome currently limits <a href='chrome://settings/syncSetup' class='link_highlight external_link'>synced extension settings</a> items to <a href='https://developer.chrome.com/extensions/storage#properties' class='link_highlight external_link'>8 KB each</a>. As a result, each list box is limited to 8 KB (approximately 600 entries).<br>
+		</div>
+		<a href='#' class='link_highlight help_header'>Privacy statement  <img src='downarrow.svg' width='16px' height='16px' class='help_header_arrow'/></a>
+		<div class='help_header_container'>
+		This extension requires access to each tab's current url for its main functionality. Because of this, Chrome will warn you that it can potentially "read your browsing history". However, this extension does not record any of the url's you visit. After the url has been used in the decision to mute or unmute the tab, it is discarded from the extension's memory.<br>
+		<br>
+		To verify this, you can view the extension's source code as follows:<br>
+		<br>
+		<div class='help_code'>
+		chrome://extensions &nbsp;&rarr;&nbsp; Turn on developer mode &nbsp;&rarr;&nbsp; Mute Tabs by Url &nbsp;&rarr;&nbsp; Inspect views: background page &nbsp;&rarr;&nbsp; Application &nbsp;&rarr;&nbsp; Frames &nbsp;&rarr;&nbsp; top &nbsp;&rarr;&nbsp; Scripts &nbsp;&rarr;&nbsp; background.js
+		</div>
+		<br>
+		<div class='help_code'>
+		click extension icon &nbsp;&rarr;&nbsp; right-click popup &nbsp;&rarr;&nbsp; Inspect &nbsp;&rarr;&nbsp; Application &nbsp;&rarr;&nbsp; Frames &nbsp;&rarr;&nbsp; top &nbsp;&rarr;&nbsp; Scripts &nbsp;&rarr;&nbsp; popup/help/permissions.js
+		</div>
+		<br>
+		This extension also requires permission to display notifications when keyboard shortcuts are used, so that users do not accidentally change settings without knowing it.<br>
+		</div>
+		<a href='#' class='link_highlight help_header'>About <img src='downarrow.svg' width='16px' height='16px' class='help_header_arrow'/></a>
+		<div class='help_header_container'>
+		This extension was developed by composer and producer <a href='https://www.vincentrubinetti.com/' class='link_highlight external_link'>Vincent Rubinetti</a> in his free time out of frustration at random websites and popups playing unwanted sounds. To make this extension the best it can be, please report bugs and feedback through the contact form on <a href='https://www.vincentrubinetti.com/' class='link_highlight external_link'>www.vincentrubinetti.com</a>.<br>
+		<br>
+		<a href='https://vincerubinetti.bandcamp.com/' class='link_highlight external_link'>Donate (by downloading an album)</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Popup</title>
+		<link href='styles.css' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='popup.js'></script>
+	</head>
+	<body>
+		<div class='header_wrapper'>
+		<a href='https://chrome.google.com/webstore/detail/mute-tabs-by-url/bpokcenamldgbghabnklpmbkkcgcgdld' class='link_no_underline external_link'><img src='icon.svg' width='32px' height='32px' class='logo'/><span class='header link_highlight'>Mute Tabs By Url</span></a>
+		<div id='update_message'>Changes saved<br>Tab mutes updated</div>
+		<div class='icon'><a href='chrome://extensions/shortcuts' class='external_link' title='Edit keyboard shortcuts'><img src='keyboard.svg' width='18px' height='18px'/></a></div>
+		<div class='icon'><a href='help.html' title='Help'><img src='questionmark.svg' width='18px' height='18px'/></a></div>
+		</div>
+
+		<span class='control_wrapper control_wrapper_top'><label for='mute_all_check'><input type='checkbox' class='checkbox' id='mute_all_check'/><b>Mute All Tabs</b></label></span>
+		<span class='control_wrapper control_wrapper_top control_wrapper_right'><label for='unmute_current_check'><input type='checkbox' class='checkbox' id='unmute_current_check'/>Always unmute current tab</label></span><br>
+
+		<span class='control_wrapper'><label for='unmute_all_check'><input type='checkbox' class='checkbox' id='unmute_all_check'/><b>Unmute All Tabs</b></label></span>
+		<span class='control_wrapper control_wrapper_right'><label for='mute_others_check'><input type='checkbox' class='checkbox' id='mute_others_check'/>Always mute all other tabs</label></span><br>
+
+		<span class='control_wrapper control_wrapper_bottom'><label for='use_black_list_check'><input type='checkbox' class='toggle' id='use_black_list_check'/><span id='use_black_list_label'><b>Use Black List</b> &nbsp;-&nbsp; Mute all tabs on black list</span><span id='use_white_list_label'><b>Use White List</b> &nbsp;-&nbsp; Mute all tabs not on white list</span></label></span><br>
+
+		<input type='button' id='black_list_tab_button' class='tab_button' value='Black List'></input><input type='button' id='white_list_tab_button' class='tab_button' value='White List'></input>
+		
+		<textarea id='black_list_textarea' class='list_box' maxlength='8192' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'></textarea>
+		<textarea id='white_list_textarea' class='list_box' maxlength='8192' autocomplete='off' autocorrect='off' autocapitalize='off' spellcheck='false'></textarea>
+
+		<input type='button' class='button button_left' id='add_domain_button' value='Add domain'></input><input type='button' class='button' id='add_page_button' value='Add page'></input><input type='button' class='button button_left' id='remove_domain_button' value='Remove domain'></input><input type='button' class='button' id='remove_page_button' value='Remove page'></input>
+	</body>
+</html>

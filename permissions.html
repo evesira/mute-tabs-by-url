@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Permissions</title>
+		<link href='styles.css' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='permissions.js'></script>
+	</head>
+	<body>
+		<br>
+		<div class='permissions_header'>&mdash; Privacy Statement &mdash;</div>
+		<br>
+		This extension requires access to each tab's current url for its main functionality. Because of this, Chrome will warn you that it can potentially "read your browsing history". However, this extension does not record any of the url's you visit. After the url has been used in the decision to mute or unmute the tab, it is discarded from the extension's memory.<br>
+		<br>
+		To verify this, you can view the extension's source code as follows:<br>
+		<br>
+		<div class='help_code'>
+		chrome://extensions &nbsp;&rarr;&nbsp; Turn on developer mode &nbsp;&rarr;&nbsp; Mute Tabs by Url &nbsp;&rarr;&nbsp; Inspect views: background page &nbsp;&rarr;&nbsp; Application &nbsp;&rarr;&nbsp; Frames &nbsp;&rarr;&nbsp; top &nbsp;&rarr;&nbsp; Scripts &nbsp;&rarr;&nbsp; background.js
+		</div>
+		<br>
+		<div class='help_code'>
+		click extension icon &nbsp;&rarr;&nbsp; right-click popup &nbsp;&rarr;&nbsp; Inspect &nbsp;&rarr;&nbsp; Application &nbsp;&rarr;&nbsp; Frames &nbsp;&rarr;&nbsp; top &nbsp;&rarr;&nbsp; Scripts &nbsp;&rarr;&nbsp; popup/help/permissions.js
+		</div>
+		<br>
+		This extension also requires permission to display notifications when keyboard shortcuts are used, so that users do not accidentally change settings without knowing it.<br>
+		<br>
+		<div class='permissions_button'>
+		<input type='button' class='button' id='approve_permissions_button' value='Approve Permissions'></input>
+		</div>
+		<br>
+	</body>
+</html>
