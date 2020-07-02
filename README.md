@@ -1,7 +1,7 @@
 # mute-tabs-by-url
 A Chrome extension that automatically mutes tabs based on their url using a black list or a white list, and several other useful muting controls.
 
-[Get it on the Chrome Webstore](https://chrome.google.com/webstore/detail/mute-tabs-by-url/bpokcenamldgbghabnklpmbkkcgcgdld)
+[**⭐ Get the Extension on the Chrome Webstore ⭐**](https://chrome.google.com/webstore/detail/mute-tabs-by-url/bpokcenamldgbghabnklpmbkkcgcgdld)
 
 ## Features
 
